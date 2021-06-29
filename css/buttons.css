@@ -5,6 +5,11 @@
   background-color: transparent;
   background-repeat: no-repeat;
   background-position: center;
+  cursor: pointer;
+}
+
+.button:active {
+  transform: scale(.9);
 }
 
 #play {

@@ -15,8 +15,31 @@
   <button class="button" id="backward"></button>
   <button class="button" id="forward"></button>
   <button class="button" id="play"></button>
-  <button class="button" id="pause"></button>
+  <button class="button" hidden id="pause"></button>
   <button>avanzar 10 segundos</button>
-  <video controls autoplay muted src="./videos/lofi.mp4" width="400"></video>
+  <video id="video" poster="./images/poster.jpg" controls muted src="./videos/lofi.mp4" width="400"></video>
+
+  <script>
+    const $video = document.querySelector('#video')
+    const $play = document.querySelector('#play')
+    const $pause = document.querySelector('#pause')
+
+    $play.addEventListener('click', handlePlay)
+    $pause.addEventListener('click', handlePause)
+
+    function handlePlay() {
+      $video.play()
+      $play.hidden = true
+      $pause.hidden = false
+      console.log('le diste click al botón de play')
+    }
+
+    function handlePause() {
+      $video.pause()
+      $pause.hidden = true
+      $play.hidden = false
+      console.log('le diste click al botón de pausa')
+    }
+  </script>
 </body>
 </html>
