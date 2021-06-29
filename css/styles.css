@@ -18,6 +18,7 @@ body {
   inline-size: 100%;
   aspect-ratio: 16/9;
   vertical-align: middle;
+  object-fit: cover;
 }
 
 .player-title {
@@ -38,6 +39,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  gap: 20px;
   /* z-index: 2; */
 }
 
@@ -51,4 +53,15 @@ body {
 
 .player-progress input {
   flex: 1;
+}
+
+.player-overlay {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: .3s opacity;
+}
+
+.player:hover .player-overlay{
+  opacity: 1;
 }
